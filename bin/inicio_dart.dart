@@ -1,32 +1,65 @@
 void main() {
+  /// Comentário de Documentação
+  /** Novo Comentário de Multiplas linhas **/
 
-  var idade = 26;  //var analisa o dado e atribui o tipo de acordo, quando não se sabe o tipo de informação que vai ser recebida, usa-se o var
-  double altura = 1.86;
-
-  // bool geek= (idade == altura);
-  bool geek= true;
-
-  const String nome = "Jeniffer Cristina Freitas Pereira";
+  // Informações sobre a nossa Persona
+  //var analisa o dado e atribui o tipo de acordo, quando não se sabe o tipo de informação que vai ser recebida, usa-se o var
+  int idade = 24;
+  double altura = 1.67;
+  bool geek = true;
+  const String nome = 'Jeniffer Cristina Freitas Pereira';
   final String apelido;
   apelido = 'Jenny';
-
   bool maiorDeIdade;
-  if(idade>=18){
+  int energia = 100;
+
+  // Método para definir se a Persona é maior de idade
+  if (idade >= 18) {
     maiorDeIdade = true;
-  }
-  else{
+  } else {
     maiorDeIdade = false;
   }
 
-  List<dynamic> dados = [24, 1.86, true, 'Jeniffer Cristina Freitas Pereira', 'Jenny'];
+  // Método para dizer quantas voltas foram dadas
+  for (int i = 1; i < 5; i = i + 2) {
+    print('Concluí $i voltas');
+  }
 
-  String frase = 'Eu sou ${dados[4]} \n'
-      'mas meu nome completo é: ${dados[3]}, \n'
-      'Eu me considero geek? ${dados[2]}. \n'
-      'Eu tenho ${dados[1]} metros de altura e \n'
-      '${dados[0]} anos de idade, \n'
+  // Método para retirar a energia da Persona
+  while (energia > 0) {
+    print('Mais uma Repetição');
+    energia = energia - 6;
+  }
+
+  //Outra maneira de aplicar a mesma situação do while
+  for (int i = 100; i > 0; i = i - 6) {
+    print('Minha energia é $i');
+  }
+
+  ///Exemplo de outra forma de usar o While
+  // do {
+  //   print("Mais uma Repetição");
+  //   energia = energia - 6;
+  // } while (energia > 0);
+
+  //Método para calcular média
+  List<dynamic> infoDiana = ["Diana", "Prince", 8.75];
+  List<dynamic> infoKal = ["Clark", 7.0, "Kent"];
+  List<dynamic> infoBruce = [10, "Bruce", "Wayne"];
+  double media = (infoDiana[2] + infoKal[1] + infoBruce[0]) / 3;
+  print(media);
+
+
+  // Definimos nossa Lista com todos os Status da Persona
+  List<dynamic> kako = [idade, altura, geek, nome, apelido];
+
+  //Frase que recebe os dados diretamente da Lista
+  String frase = 'Eu sou ${kako[4]} \n'
+      'mas meu nome completo é: ${kako[3]}, \n'
+      'eu me considero geek? ${kako[2]}. \n'
+      'Eu tenho ${kako[1]} metros de altura e \n'
+      '${kako[0]} anos de idade,\n'
       'Eu sou maior de idade? $maiorDeIdade';
-
 
   // String frase = 'Eu sou $apelido \n'
   //     'mas meu nome completo é: $nome, \n'
@@ -34,19 +67,7 @@ void main() {
   //     'Eu tenho $altura metros de altura e \n'
   //     '$idade anos de idade';
 
-  List<String> listaNomes = ['Larissa', 'Davi', 'Ana', 'Mateus'];
-
-  List<dynamic> variaveis = [idade, altura, geek, nome, apelido];
-
-  List<dynamic> infoDiana = ["Diana", "Prince", 8.75];
-  List<dynamic> infoKal = ["Clark", 7.0, "Kent"];
-  List<dynamic> infoBruce = [10, "Bruce", "Wayne"];
-  double media = (infoDiana[2] + infoKal[1] + infoBruce[0])/3;
-
+  //List<String> listanomes = ['Ricarth', 'Natália', 'Alex', 'Ândriu', 'André'];
+  //TODO: Fazer outras Personas da equipe de Mobile
   print(frase);
-  print(listaNomes[0]);
-  print(listaNomes.length);
-  print(dados);
-  print(variaveis);
-  print(media);
 }
